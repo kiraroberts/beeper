@@ -12,7 +12,7 @@ function halResponse(input) {
 
   stringArray.forEach(function(stringArrayElement) {
     if ((stringArrayElement.includes("3"))) {
-      outputArray.push("I'm sorry Dave. I'm afraid I can't do that.");
+      outputArray.push("I'm sorry Dave, I'm afraid I can't do that");
     } else if ((stringArrayElement.includes("2"))) {
       outputArray.push("boop");
     } else if ((stringArrayElement.includes("1"))) {
@@ -21,7 +21,20 @@ function halResponse(input) {
       outputArray.push(stringArrayElement);
     }
   })
-  return outputArray
+  var outputString = outputArray.join(", ")
+
+  var indexChar = 0;
+  var text = outputString;
+  var speed = 50;
+
+  function halSpeaks() {
+    if (indexChar < text.length) {
+      document.getElementById("halOutput").innerHTML +=text.charAt(indexChar);
+      indexChar++;
+      setTimeout(halSpeaks, speed);
+    }
+  }
+  return = outputString
 };
 
 //FRONT END
@@ -34,7 +47,19 @@ $(document).ready(function() {
 console.log(userInput);
     var output = halResponse(userInput);
 
-    $("div#output").text(output);
+    var indexChar = 0;
+    var text = output;
+    var speed = 50;
+
+    function halSpeaks() {
+      if (indexChar < text.length) {
+        document.getElementById("halOutput").innerHTML +=text.charAt(indexChar);
+        indexChar++;
+        setTimeout(halSpeaks, speed);
+      }
+    }
+
+    // $("div#output").text(output);
 
   });
 });
