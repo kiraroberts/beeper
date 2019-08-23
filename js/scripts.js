@@ -7,8 +7,9 @@ function halResponse(input) {
   for (var index = 0; index <= input; index++) {
     var stringInput = index.toString();
     stringArray.push(stringInput)
+    console.log(stringArray);
   };
-  console.log(stringArray);
+
   stringArray.forEach(function(stringArrayElement) {
     if ((stringArrayElement.includes("3"))) {
       outputArray.push("I'm sorry Dave. I'm afraid I can't do that.");
@@ -29,8 +30,8 @@ $(document).ready(function() {
   $("form#halInterface").submit(function(event) {
     event.preventDefault();
 
-    var userInput = $("halInterface#interface").val();
-
+    var userInput = $("input#interface").val();
+console.log(userInput);
     var output = halResponse(userInput);
 
     $("div#output").text(output);
