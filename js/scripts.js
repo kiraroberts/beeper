@@ -7,7 +7,6 @@ function halResponse(input) {
   for (var index = 0; index <= input; index++) {
     var stringInput = index.toString();
     stringArray.push(stringInput)
-    console.log(stringArray);
   };
 
   stringArray.forEach(function(stringArrayElement) {
@@ -21,20 +20,7 @@ function halResponse(input) {
       outputArray.push(stringArrayElement);
     }
   })
-  var outputString = outputArray.join(", ")
-
-  var indexChar = 0;
-  var text = outputString;
-  var speed = 50;
-
-  function halSpeaks() {
-    if (indexChar < text.length) {
-      document.getElementById("halOutput").innerHTML +=text.charAt(indexChar);
-      indexChar++;
-      setTimeout(halSpeaks, speed);
-    }
-  }
-  return = outputString
+  return outputArray.join(", ")
 };
 
 //FRONT END
@@ -44,22 +30,11 @@ $(document).ready(function() {
     event.preventDefault();
 
     var userInput = $("input#interface").val();
-console.log(userInput);
+
     var output = halResponse(userInput);
 
-    var indexChar = 0;
-    var text = output;
-    var speed = 50;
 
-    function halSpeaks() {
-      if (indexChar < text.length) {
-        document.getElementById("halOutput").innerHTML +=text.charAt(indexChar);
-        indexChar++;
-        setTimeout(halSpeaks, speed);
-      }
-    }
-
-    // $("div#output").text(output);
+    $("h1#halOutput").text(output);
 
   });
 });
