@@ -1,8 +1,6 @@
-.well {
-  border-radius: 50%;
-  width: 256px;
-  height: 256px;
-  padding-top: 50%;
+img {
+  margin-left: 50%;
+  margin-right: 50%;
 }
 
 body {
