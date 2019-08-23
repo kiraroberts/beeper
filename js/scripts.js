@@ -21,6 +21,7 @@ function halResponse(input) {
     }
   })
   return outputArray.join(", ")
+  outputArray = [];
 };
 
 //FRONT END
