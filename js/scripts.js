@@ -4,6 +4,7 @@ var stringArray = [];
 var outputArray = [];
 
 function halResponse(input) {
+  $("h1#halOutput").text("");
   for (var index = 0; index <= input; index++) {
     var stringInput = index.toString();
     stringArray.push(stringInput)
@@ -21,7 +22,6 @@ function halResponse(input) {
     }
   })
   return outputArray.join(", ")
-  outputArray = [];
 };
 
 //FRONT END
@@ -29,13 +29,8 @@ function halResponse(input) {
 $(document).ready(function() {
   $("form#halInterface").submit(function(event) {
     event.preventDefault();
-
-    var userInput = $("input#interface").val();
-
-    var output = halResponse(userInput);
-
-
-    $("h1#halOutput").text(output);
+    var userInput = parseInt($("input#interface").val());
+    $("h1#halOutput").text(halResponse(userInput));
 
   });
 });
