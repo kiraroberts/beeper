@@ -14,6 +14,12 @@
 
 ### HAL will respond with a series of numbers and verbal responses and display them to the user
 
+| Input      | Output |
+| ----------- | ----------- |
+| 4      | 0, Beep, Boop, I'm sorry Dave, I'm afraid I can't do that, 4       |
+| 12   | 0, beep, boop, I'm sorry Dave, I'm afraid I can't do that, 4, 5, 6, 7, 8, 9, beep, beep, boop      |
+| 22   | 0, beep, boop, I'm sorry Dave, I'm afraid I can't do that, 4, 5, 6, 7, 8, 9, beep, beep, boop, I'm sorry Dave, I'm afraid I can't do that, beep, beep, beep, beep, beep, beep, boop, boop, boop    |
+
 ## Setup
 
 ### Navigate to https://github.com/kiraroberts/beeper in a web browser and clone the repository.
