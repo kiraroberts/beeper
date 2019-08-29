@@ -12,7 +12,7 @@
 
 ### HAL will process the pass code
 
-### HAL will respond with a series of numbers and verbal responses and display them to the user
+### HAL will respond with all of the numbers from zero to the entered number, replacing numbers that include 3 with a phrase, 2 with a boop, and 1 with a beep. 3 will override 2 and 1, and 2 will overide 1. 
 
 | Input      | Output |
 | ----------- | ----------- |
